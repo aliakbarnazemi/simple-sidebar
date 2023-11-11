@@ -10,10 +10,38 @@
 
 <body>
     <main>
+        <nav>
+            <div class="nav-items">
+                <ul id="sidebarMenu" dir="rtl">
+                    <li>
+                        <button id="sidebarCollapse" >
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" class="svg-icon"
+                                viewBox="0 0 50 50">
+                                <path class="svg-icon"
+                                    d="M 0 9 L 0 11 L 50 11 L 50 9 Z M 0 24 L 0 26 L 50 26 L 50 24 Z M 0 39 L 0 41 L 50 41 L 50 39 Z">
+                                </path>
+                            </svg>
+                        </button>
+                    </li>
+
+                    <li>
+                        <button id="open" style="display: none;">
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" class="svg-icon"
+                                viewBox="0 0 50 50">
+                                <path class="svg-icon"
+                                    d="M 0 9 L 0 11 L 50 11 L 50 9 Z M 0 24 L 0 26 L 50 26 L 50 24 Z M 0 39 L 0 41 L 50 41 L 50 39 Z">
+                                </path>
+                            </svg>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+        </nav>
         <div class="row">
             <!-- sidebar -->
             <aside id="sidebar">
-                <div class="sidebar-content">
+                <div class="sidebar-content" id="sidebar-content">
                     <h2>Sidebar</h2>
                     <br>
                     <br>
@@ -30,21 +58,8 @@
             </aside>
 
             <section class="content">
-                <div class="sidebar-buttons">
-                    <button id="sidebarCollapse">
-                        <!--  
-                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25px" height="25px"
-                            viewBox="0 0 50 50">
-                            <path
-                                d="M 0 9 L 0 11 L 50 11 L 50 9 Z M 0 24 L 0 26 L 50 26 L 50 24 Z M 0 39 L 0 41 L 50 41 L 50 39 Z">
-                            </path>
-                        </svg>                            
-                        -->
-                        open
-                    </button>
-                    <button id="open" style="display: none;">
-                        close
-                    </button>
+                <div class="header-img">
+
                 </div>
             </section>
         </div>
@@ -55,21 +70,24 @@
             const sidebarCollapse = document.getElementById('sidebarCollapse');
             const sidebar = document.getElementById('sidebar');
             const opensidebar = document.getElementById('open');
+            const sidebarcontent = document.getElementById('sidebar-content');
 
             sidebarCollapse.addEventListener('click', function () {
                 sidebar.classList.toggle('active');
-                sidebar.style.display = 'block';
+                sidebar.style.width='100%';
+                sidebarcontent.style.display = 'block';
                 sidebarCollapse.style.display = 'none';
                 opensidebar.style.display = 'block';
             });
 
             opensidebar.addEventListener('click', function () {
                 opensidebar.style.display = 'none';
-                sidebar.style.display = 'none';
+                sidebar.style.width='0%';
+                sidebarcontent.style.display = 'none';
                 sidebarCollapse.style.display = 'block';
             });
         });
-
+        
     </script>
 </body>
 
