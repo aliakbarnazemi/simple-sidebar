@@ -76,4 +76,21 @@ a {
   transition: .5s;
 }
 
+.header-content {
+  width: 100%;
+  height: auto;
+}
+
+.header-img{
+  height: 45vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(/assets/images/651d2685e56bf79310c86f31_Hero\ Image\ 1\ -\ Audial\ -\ Dark\ Mode\ Webflow\ E-Commerce\ Podcast\ Template.jpg);
+}
+.header-text{
+  font-weight: bold;
+  color: grey;
+  font-size: 18px;
+}
+
 /* End Header */
