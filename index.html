@@ -1,51 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Sidebar</title>
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@500&family=IBM+Plex+Sans:wght@600&family=Inter:wght@300&family=Roboto:wght@300&display=swap"
+        rel="stylesheet">
+    <title>Template-2</title>
 </head>
 
 <body>
     <main>
-        <nav>
-            <div class="nav-items">
-                <ul id="sidebarMenu" dir="rtl">
-                    <li>
-                        <button id="sidebarCollapse" >
-                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" class="svg-icon"
-                                viewBox="0 0 50 50">
-                                <path class="svg-icon"
-                                    d="M 0 9 L 0 11 L 50 11 L 50 9 Z M 0 24 L 0 26 L 50 26 L 50 24 Z M 0 39 L 0 41 L 50 41 L 50 39 Z">
-                                </path>
-                            </svg>
-                        </button>
-                    </li>
+        <!-- Start Header -->
+        <header class="container-fluid container-xxl">
+            <nav class="navbar navbar-fixed-top" dir="rtl">
+                <div class="container-fluid">
+                    <div class="d-flex">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <button id="sidebarCollapse" class="btn button">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor"
+                                    class="bi bi-list text-white" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                                </svg>
+                            </button>
 
-                    <li>
-                        <button id="open" style="display: none;">
-                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" class="svg-icon"
-                                viewBox="0 0 50 50">
-                                <path class="svg-icon"
-                                    d="M 0 9 L 0 11 L 50 11 L 50 9 Z M 0 24 L 0 26 L 50 26 L 50 24 Z M 0 39 L 0 41 L 50 41 L 50 39 Z">
-                                </path>
-                            </svg>
-                        </button>
-                    </li>
-                </ul>
-            </div>
+                            <button id="open" style="display: none;font-size: 24px;color: white;" class="btn button">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="45" fill="currentColor"
+                                    class="bi bi-x-circle" viewBox="0 0 16 16">
+                                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                    <path
+                                        d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                                </svg>
+                            </button>
+                        </ul>
+                    </div>
+                    <a class="navbar-brand fs-3" href="#">
+                        <img src="/assets/images/651bdc7525239ceea7128349_Logo.svg" style="width: 150px;height: 50px;"
+                            alt="">
+                    </a>
+                </div>
+            </nav>
 
-        </nav>
-        <div class="row">
-            <!-- sidebar -->
-            <aside id="sidebar">
+            <aside id="sidebar" class="">
                 <div class="sidebar-content" id="sidebar-content">
-                    <h2>Sidebar</h2>
+                    <div>
+                        <h2 class="text-center container">Menu Homepage</h2>
+                    </div>
                     <br>
-                    <br>
-                    <ul>
+                    <ul class="sidebar-items">
                         <li><a href="#">Home</a></li>
                         <br>
                         <li><a href="#">About Us</a></li>
@@ -56,39 +64,42 @@
                     </ul>
                 </div>
             </aside>
-
-            <section class="content">
-                <div class="header-img">
-
-                </div>
-            </section>
-        </div>
+        </header>
+        <!-- End Header -->
     </main>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function (x) {
-            const sidebarCollapse = document.getElementById('sidebarCollapse');
-            const sidebar = document.getElementById('sidebar');
-            const opensidebar = document.getElementById('open');
-            const sidebarcontent = document.getElementById('sidebar-content');
-
-            sidebarCollapse.addEventListener('click', function () {
-                sidebar.classList.toggle('active');
-                sidebar.style.width='100%';
-                sidebarcontent.style.display = 'block';
-                sidebarCollapse.style.display = 'none';
-                opensidebar.style.display = 'block';
-            });
-
-            opensidebar.addEventListener('click', function () {
-                opensidebar.style.display = 'none';
-                sidebar.style.width='0%';
-                sidebarcontent.style.display = 'none';
-                sidebarCollapse.style.display = 'block';
-            });
-        });
         
+// Start Sidebar
+document.addEventListener('DOMContentLoaded', function (x) {
+    const sidebarCollapse = document.getElementById('sidebarCollapse');
+    const sidebar = document.getElementById('sidebar');
+    const opensidebar = document.getElementById('open');
+    const sidebarcontent = document.getElementById('sidebar-content');
+
+    sidebarCollapse.addEventListener('click', function () {
+        sidebar.classList.toggle('active');
+        sidebar.style.width = '100%';
+        sidebar.style.height = '90vh';
+        sidebarcontent.style.display = 'block';
+        sidebarCollapse.style.display = 'none';
+        opensidebar.style.display = 'block';
+    });
+
+    opensidebar.addEventListener('click', function () {
+        opensidebar.style.display = 'none';
+        sidebar.style.width = '0%';
+        sidebar.style.height = '0vh';
+        sidebarcontent.style.display = 'none';
+        sidebarCollapse.style.display = 'block';
+    });
+});
+
+// End Sidebar
     </script>
+</body>
+
+</html>
 </body>
 
 </html>
