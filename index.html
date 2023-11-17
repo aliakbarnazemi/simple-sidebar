@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Sidebar</title>
+</head>
+
+<body>
+    <main>
+        <nav>
+            <div class="nav-items">
+                <ul id="sidebarMenu" dir="rtl">
+                    <li>
+                        <button id="sidebarCollapse" >
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" class="svg-icon"
+                                viewBox="0 0 50 50">
+                                <path class="svg-icon"
+                                    d="M 0 9 L 0 11 L 50 11 L 50 9 Z M 0 24 L 0 26 L 50 26 L 50 24 Z M 0 39 L 0 41 L 50 41 L 50 39 Z">
+                                </path>
+                            </svg>
+                        </button>
+                    </li>
+
+                    <li>
+                        <button id="open" style="display: none;">
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" class="svg-icon"
+                                viewBox="0 0 50 50">
+                                <path class="svg-icon"
+                                    d="M 0 9 L 0 11 L 50 11 L 50 9 Z M 0 24 L 0 26 L 50 26 L 50 24 Z M 0 39 L 0 41 L 50 41 L 50 39 Z">
+                                </path>
+                            </svg>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+        </nav>
+        <div class="row">
+            <!-- sidebar -->
+            <aside id="sidebar">
+                <div class="sidebar-content" id="sidebar-content">
+                    <h2>Sidebar</h2>
+                    <br>
+                    <br>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <br>
+                        <li><a href="#">About Us</a></li>
+                        <br>
+                        <li><a href="#">Services</a></li>
+                        <br>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+            </aside>
+
+            <section class="content">
+                <div class="header-img">
+
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function (x) {
+            const sidebarCollapse = document.getElementById('sidebarCollapse');
+            const sidebar = document.getElementById('sidebar');
+            const opensidebar = document.getElementById('open');
+            const sidebarcontent = document.getElementById('sidebar-content');
+
+            sidebarCollapse.addEventListener('click', function () {
+                sidebar.classList.toggle('active');
+                sidebar.style.width='100%';
+                sidebarcontent.style.display = 'block';
+                sidebarCollapse.style.display = 'none';
+                opensidebar.style.display = 'block';
+            });
+
+            opensidebar.addEventListener('click', function () {
+                opensidebar.style.display = 'none';
+                sidebar.style.width='0%';
+                sidebarcontent.style.display = 'none';
+                sidebarCollapse.style.display = 'block';
+            });
+        });
+        
+    </script>
+</body>
+
+</html>
