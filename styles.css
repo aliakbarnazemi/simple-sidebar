@@ -5,7 +5,8 @@
 }
 
 body {
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;}
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
 
 .row {
   display: flex;
@@ -83,3 +84,4 @@ nav .nav-items ul{
 .nav-items{
   margin: 10px 10px;
 }
+
