@@ -5,9 +5,7 @@
 }
 
 body {
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-    background-color: white;
-}
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;}
 
 .row {
   display: flex;
